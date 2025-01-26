@@ -10,6 +10,7 @@
       padding: 0;
       box-sizing: border-box;
     }
+    
     body {
       font-family: Arial, sans-serif;
       background: linear-gradient(135deg, #e0eafc, #cfdef3);
@@ -17,14 +18,16 @@
     }
   
     header {
-      background: #003366;
-      color: #fff;
-      padding: 20px;
-      text-align: center;
+    	background: #003366;
+    	color: #fff;
+    	padding: 20px;
+    	text-align: center;
     }
+    
     header h1 {
       font-size: 24px;
     }
+    
     nav {
       display: flex;
       justify-content: space-between;
@@ -37,22 +40,27 @@
       display: flex;
       gap: 15px;
     }
+    
     nav ul li {
       color: #fff;
       cursor: pointer;
     }
+    
     nav ul li:hover {
       text-decoration: underline;
     }
+    
     nav .search {
       display: flex;
       align-items: center;
     }
+    
     nav input {
       padding: 5px;
       border-radius: 5px;
       border: 1px solid #ddd;
     }
+    
     nav button {
       padding: 5px 10px;
       margin-left: 5px;
@@ -62,23 +70,27 @@
       border-radius: 5px;
       cursor: pointer;
     }
+    
     .main {
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
       padding: 20px;
     }
+    
     .map {
       width: 100%;
       max-width: 600px;
       margin-right: 20px;
     }
+    
     .main iframe {
       width: 100%;
       height: 500px;
       border: none;
       border-radius: 10px;
     }
+   
     .tickets, .schedule, .feedback, .contact {
       flex: 1 1 45%;
       margin-top: 20px;
@@ -87,6 +99,7 @@
       border-radius: 10px;
       background: #f9f9f9;
     }
+   
     .form-group {
       margin-bottom: 15px;
     }
@@ -101,6 +114,7 @@
       border-radius: 5px;
       border: 1px solid #ddd;
     }
+    
     footer {
       margin-top: 20px;
       background: #003366;
@@ -112,58 +126,58 @@
   
 </head>
 <body>
-    <header>
-      <h1>Train Fare Guide</h1>
-    </header>
+  <header>
+    <h1>Train Fare Guide</h1>
+  </header>
     
   <nav>
-      <ul>
-        <li>Home</li>
-        <li>Transit Schedule</li>
-        <li>Contact Us</li>
-      </ul>
+    <ul>
+      <li>Home</li>
+      <li>Transit Schedule</li>
+      <li>Contact Us</li>
+    </ul>
     
-      <div class="search">
-        <input type="text" placeholder="Search...">
-        <button>Search</button>
-      </div>
-    </nav>
+    <div class="search">
+      <input type="text" placeholder="Search...">
+      <button>Search</button>
+    </div>
+  </nav>
     
   <div class="main">
-      <section class="map">
-        <h2>Metro Rail Transit Map</h2>
-        <iframe src="https://www.metrolinemap.com/metro/manila/" title="Metro Rail Transit Map"></iframe>
-      </section>
-     
-      <section class="tickets">
-        <h2>Types of Tickets</h2>
-        <ul>
-          <li>Regular Ticket: Php 13 - Php 28</li>
-          <li>Discounted Ticket (20% off for Senior, PWD, & Students)</li>
-        </ul>
-      </section>
+    <section class="map">
+      <h2>Metro Rail Transit Map</h2>
+      <iframe src="https://www.metrolinemap.com/metro/manila/" title="Metro Rail Transit Map"></iframe>
+    </section>
       
-      <section class="schedule">
-        <h2>Train Schedule</h2>
-        <p>Trains run every 15 minutes from 5:00 AM to 10:00 PM.</p>
-      </section>
-      
-      <section class="feedback">
-        <h2>Comment/Feedback</h2>
-        <form>
-          <div class="form-group">
-            <label for="comment">Leave a comment:</label>
-            <textarea id="comment" rows="4" placeholder="Your feedback..."></textarea>
-          </div>
-          <button type="submit">Submit</button>
-        </form>
-      </section>
+    <section class="tickets">
+      <h2>Types of Tickets</h2>
+      <ul>
+        <li>Regular Ticket: Php 13 - Php 28</li>
+        <li>Discounted Ticket (20% off for Senior, PWD, & Students)</li>
+      </ul>
+    </section>
      
-      <section class="contact">
-        <h2>Contact Information</h2>
-        <p>Email: info@trainfareguide.com</p>
-        <p>Phone: +63 123 456 7890</p>
-      </section>
+    <section class="schedule">
+      <h2>Train Schedule</h2>
+      <p>Trains run every 15 minutes from 5:00 AM to 10:00 PM.</p>
+    </section>
+      
+    <section class="feedback">
+      <h2>Comment/Feedback</h2>
+      <form>
+        <div class="form-group">
+          <label for="comment">Leave a comment:</label>
+          <textarea id="comment" rows="4" placeholder="Your feedback..."></textarea>
+        </div>
+        <button type="submit">Submit</button>
+      </form>
+    </section>
+
+   <section class="contact">
+      <h2>Contact Information</h2>
+      <p>Email: info@trainfareguide.com</p>
+      <p>Phone: +63 123 456 7890</p>
+    </section>
     
     <footer>
       <p>Damondamon & Manese, Grade 9 ICT &copy; 2025</p>
