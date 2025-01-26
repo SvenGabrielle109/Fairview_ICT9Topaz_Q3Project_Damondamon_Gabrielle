@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Train Fare Website</title>
+  <title>Train Fare Guide</title>
   <style>
-    * {
+    {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
@@ -13,19 +13,9 @@
     body {
       font-family: Arial, sans-serif;
       background: linear-gradient(135deg, #e0eafc, #cfdef3);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
+      margin: 0;
     }
-    .container {
-      width: 90%;
-      max-width: 1200px;
-      background: #fff;
-      border-radius: 10px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      overflow: hidden;
-    }
+  
     header {
       background: #003366;
       color: #fff;
@@ -35,157 +25,150 @@
     header h1 {
       font-size: 24px;
     }
-    .main {
+    nav {
       display: flex;
-      flex-wrap: wrap;
-      padding: 20px;
-      gap: 20px;
-      justify-content: center;
+      justify-content: space-between;
+      align-items: center;
+      background: #00509e;
+      padding: 10px;
     }
-    .card {
-      background: #f9f9f9;
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 15px;
+    }
+    nav ul li {
+      color: #fff;
+      cursor: pointer;
+    }
+    nav ul li:hover {
+      text-decoration: underline;
+    }
+    nav .search {
+      display: flex;
+      align-items: center;
+    }
+    nav input {
+      padding: 5px;
+      border-radius: 5px;
       border: 1px solid #ddd;
-      border-radius: 8px;
-      width: 300px;
-      padding: 20px;
-      text-align: center;
     }
-    .card img {
-      width: 100%;
-      height: 150px;
-      border-radius: 8px;
-      object-fit: cover;
-    }
-    .card h2 {
-      font-size: 20px;
-      margin: 15px 0;
-    }
-    .card p {
-      font-size: 14px;
-      color: #555;
-    }
-    .card button {
-      margin-top: 15px;
-      padding: 10px 20px;
+    nav button {
+      padding: 5px 10px;
+      margin-left: 5px;
+      border: none;
       background: #003366;
       color: #fff;
-      border: none;
       border-radius: 5px;
       cursor: pointer;
     }
-    .card button:hover {
-      background: #00509e;
+    .main {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      padding: 20px;
+    }
+    .map {
+      width: 100%;
+      max-width: 600px;
+      margin-right: 20px;
+    }
+    .main iframe {
+      width: 100%;
+      height: 500px;
+      border: none;
+      border-radius: 10px;
+    }
+    .tickets, .schedule, .feedback, .contact {
+      flex: 1 1 45%;
+      margin-top: 20px;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      background: #f9f9f9;
+    }
+    .form-group {
+      margin-bottom: 15px;
+    }
+    .form-group label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+    .form-group input, .form-group select, .form-group textarea {
+      width: 100%;
+      padding: 8px;
+      border-radius: 5px;
+      border: 1px solid #ddd;
     }
     footer {
+      margin-top: 20px;
       background: #003366;
       color: #fff;
       text-align: center;
       padding: 10px;
     }
-    .popup {
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      background: #fff;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-      display: none;
-      width: 300px;
-    }
-    .popup h2 {
-      font-size: 20px;
-      margin-bottom: 15px;
-    }
-    .popup label {
-      font-weight: bold;
-      display: block;
-      margin: 10px 0 5px;
-    }
-    .popup input, .popup select {
-      width: 100%;
-      padding: 8px;
-      margin-bottom: 15px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-    }
-    .popup button {
-      padding: 10px 20px;
-      background: #003366;
-      color: #fff;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      width: 100%;
-    }
-    .popup button:hover {
-      background: #00509e;
-    }
-    .popup .close {
-        position: absolute;
-        top: 10px;
-        right: 10px;
-        background: transparent;
-        border: none;
-        font-size: 18px;
-        cursor: pointer;
-    }
   </style>
+  
 </head>
 <body>
-  <div class="container">
     <header>
-      <h1>Train Fare Service</h1>
+      <h1>Train Fare Guide</h1>
     </header>
-    <div class="main">
-      <div class="card">
-        <img src="https://via.placeholder.com/300x150" alt="Placeholder">
-        <h2>Destination</h2>
-        <p>Details about the destination</p>
-        <button onclick="openPopup()">Book Now</button>
+    
+  <nav>
+      <ul>
+        <li>Home</li>
+        <li>Transit Schedule</li>
+        <li>Contact Us</li>
+      </ul>
+    
+      <div class="search">
+        <input type="text" placeholder="Search...">
+        <button>Search</button>
       </div>
+    </nav>
+    
+  <div class="main">
+      <section class="map">
+        <h2>Metro Rail Transit Map</h2>
+        <iframe src="https://www.metrolinemap.com/metro/manila/" title="Metro Rail Transit Map"></iframe>
+      </section>
+     
+      <section class="tickets">
+        <h2>Types of Tickets</h2>
+        <ul>
+          <li>Regular Ticket: Php 13 - Php 28</li>
+          <li>Discounted Ticket (20% off for Senior, PWD, & Students)</li>
+        </ul>
+      </section>
       
-      <div class="card">
-        <img src="https://via.placeholder.com/300x150" alt="Placeholder">
-        <h2>Destination</h2>
-        <p>Details about the destination</p>
-        <button onclick="openPopup()">Book Now</button>
-      </div>
+      <section class="schedule">
+        <h2>Train Schedule</h2>
+        <p>Trains run every 15 minutes from 5:00 AM to 10:00 PM.</p>
+      </section>
       
-      <div class="card">
-        <img src="https://via.placeholder.com/300x150" alt="Placeholder">
-        <h2>Destination</h2>
-        <p>Details about the destination</p>
-        <button onclick="openPopup()">Book Now</button>
-      </div>
-    </div>
+      <section class="feedback">
+        <h2>Comment/Feedback</h2>
+        <form>
+          <div class="form-group">
+            <label for="comment">Leave a comment:</label>
+            <textarea id="comment" rows="4" placeholder="Your feedback..."></textarea>
+          </div>
+          <button type="submit">Submit</button>
+        </form>
+      </section>
+     
+      <section class="contact">
+        <h2>Contact Information</h2>
+        <p>Email: info@trainfareguide.com</p>
+        <p>Phone: +63 123 456 7890</p>
+      </section>
+    
     <footer>
-      <p>Damondamon & Manese &copy; 2025</p>
+      <p>Damondamon & Manese, Grade 9 ICT &copy; 2025</p>
+      <p>Source: <a href="https://www.metrolinemap.com/metro/manila/" target="_blank">MetroLineMap</a></p>
     </footer>
   </div>
-
-  <div class="popup" id="popup">
-    <button class="close" onclick="closePopup()">&times;</button>
-    <h2>Book Your Ticket</h2>
-    <label for="name">Name:</label>
-      <input type="text" id="name" placeholder="Enter your name">
-    <label for="email">Email:</label>
-      <input type="email" id="email" placeholder="Enter your email">
-    <label for="seats">Number of Seats:</label>
-      <input type="number" id="seats" placeholder="Enter number of seats">
-    <label for="date">Travel Date:</label>
-      <input type="date" id="date">
-    <button>Submit</button>
-  </div>
-
-  <script>
-    function openPopup() {
-      document.getElementById("popup").style.display = "block";
-    }
-    function closePopup() {
-      document.getElementById("popup").style.display = "none";
-    }
-  </script>
 </body>
 </html>
