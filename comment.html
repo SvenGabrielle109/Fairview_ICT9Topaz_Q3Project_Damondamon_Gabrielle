@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Kosugi&display=swap');
+    body {
+      font-family: Kosugi, serif;
+      background: linear-gradient(#e1f0c4, #6bab90);
+      color: #333;
+    }
+
+    header {
+      background: #5e4c5a;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 28px;
+      margin: 0;
+    }
+
+    .nav-item {
+      font-weight: bold;
+    }
+
+    .nav-item:hover {
+      text-decoration: underline;
+    }
+
+    .search-bar {
+      margin: auto;
+      width: 300px;
+    }
+
+    .main {
+      padding: 60px;
+    }
+
+    .map, .tickets, .contact {
+      background: #f9f9f9;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      margin-bottom: 10px;
+    }
+    .location{
+      background: #f9f9f9;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      margin-bottom: 10px;
+      margin-top: -30px;
+      width: 200%;
+    }
+
+    .map img, .tickets img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    .form-group select, .form-group textarea {
+      width: 100%;
+      padding: 8px;
+      border-radius: 5px;
+      border: 1px solid #ddd;
+    }
+
+    .form-group label {
+      font-weight: bold;
+    }
+
+    button {
+      padding: 10px 20px;
+      background: #5e4c5a;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #5e4c5a;
+    }
+
+    footer {
+      background: #5e4c5a;
+      color: #fff;
+      padding: 15px;
+      text-align: center;
+      margin-top: 20px;
+      width: 2000px;
+      float: left;
+    }
+
+    footer p {
+      margin: 0;
+    }
+
+    .warning {
+      color: red;
+      font-weight: bold;
+    }
+
+    .dropdown-menu {
+      min-width: 350px;
+      max-width: 350px;
+      white-space: normal;
+      left: auto !important;
+      right: 0 !important;
+    }
+    
+    form label {
+      font-weight: normal;
+    }
+    .schedule {
+      background: #f9f9f9;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      margin-bottom: 10px;
+    }
+
+    .schedule table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .schedule th, .schedule td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: center;
+    }
+
+    .schedule th {
+      background-color: #5e4c5a;
+      color: white;
+    }
+
+    .container-main{
+      background: #f9f9f9;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      float: left;
+      display: inline;
+      width: 200%;
+    }
+    
+    .feedback label{
+      font-family: Kosugi, serif;
+    }
+
+    
+    .comment select{
+      font-size: 20px;
+    }
+
+    .comment input{
+      font-size: 20px;
+    }
+
+    .comment h2{
+      font-size: 20px;
+    }
+
+    .feedback input{
+      font-size: 20px;
+    }
+
+    .comment summary{
+      font-size: 20px;
+    }
+  </style>
+</head>
+<body>
+	<header>
+    <h1>ᝰ Eggplant Express .ᐟ</h1>
+  </header>
+
+  <nav class="navbar navbar-expand-lg navbar-dark" style="background: #55917f;">
+    <input class="form-control search-bar" type="search" placeholder="Search...">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item active"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item active"><a class="nav-link" href="comment.html">Feedback</a></li>
+        <li class="nav-item active"><a class="nav-link" href="history.html">History</a></li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="contactDropdown" role="button" data-toggle="dropdown">Contact Us</a>
+          <div class="dropdown-menu">
+            <p class="dropdown-item">Email: eggplantexpress@gmail.com</p>
+            <p class="dropdown-item">Phone: +63 123 456 7890</p>
+            <p class="dropdown-item">Owners: Damondamon & Manese</p>
+          </div>
+        </li>
+        
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="referencesDropdown" role="button" data-toggle="dropdown">References</a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="https://www.metrolinemap.com/metro/manila/" target="_blank">Metro Manila Metro Map</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </nav> 
+ 
+  <br>
+
+  <div class="container main">
+    <div class="row">
+      <div class="col-md-6">
+        <section class="location">
+          <section class="comment">
+            <center>
+              <h1><em>Evaluation</em></h1>
+            </center>
+              
+            <br>
+
+            <div class="form-group">
+              <form>
+                <center>
+                  <h2><em>Does it help you find the needed location?</em></h2>
+                </center>
+
+                <br> 
+
+                <select class="d-grid">
+                  <option value="none">Evaluate</option>
+                  <option value="E">Excellent</option>
+                  <option value="AS">Above Satisficatory</option>
+                  <option value="S">Satfiscatory</option>
+                  <option value="NI">Needs Improvement</option>
+                  <option value="PP">Poor Performance</option> 
+                  <option value="F">Failure</option>  
+                </select>
+              </form>   
+            
+              <br>
+
+              <form>
+                <center>
+                  <details ontoggle="Info()">
+                    <summary>Does it give you the correect schedule for the train?</summary>
+                      <i id="Display"> </i>
+                  </details>
+                </center>
+
+                <br> 
+
+                <select class="d-grid">
+                  <option value="none">Evaluate</option>
+                  <option value="E">Excellent</option>
+                  <option value="AS">Above Satisficatory</option>
+                  <option value="S">Satfiscatory</option>
+                  <option value="NI">Needs Improvement</option>
+                  <option value="PP">Poor Performance</option>   
+                  <option value="F">Failure</option>  
+                </select>
+              </form>     
+              
+              <br>
+            
+              <center>
+                <form>      
+                  <center>
+                    <details ontoggle="Info2()">
+                      <summary>Does it calculate the price (including the discount) correctly?</summary>
+                        <i id="Display2"> </i>
+                    </details>
+                  </center>
+
+                  <br> 
+
+                  <label for="Yes">Yes</label>
+                    <input type="radio" name="Yes">
+                
+                  <br>
+
+                  <label for="No">No</label>
+                    <input type="radio" name="No" value="No">
+
+                  <br>
+
+                  <input type="submit" value="Submit Your Feedback" onclick="Message()"> 
+                </form>
+              </center>
+            </div>
+          </section>
+        </section>
+             
+        <br>
+
+        <section class="container-main">
+          <center>
+            <h1><em>Feedback</em></h1>
+          </center>
+        
+          <br>
+
+          <section class="feedback">
+            <form class="form-group">
+              <center>
+                <h2><em>What is your opinion in our work?</em></h2>
+              </center>
+            
+              <br>
+            
+              <textarea rows="10" cols="57" placeholder="What are your thoughts about the Train Fare Guide?"></textarea>
+            
+              <br>
+          
+              <center>
+                <input type="submit" value="Submit Your Feedback" onclick="Message2()">
+              </center>
+            </form>
+          </section>
+        </section>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function Message(){
+      //alert("Try")
+
+      window.alert("Thank you for your evaluation! We'll try our best to improve our website");
+    }
+
+    function Info(){
+      //alert("Try")
+
+      document.getElementById("Display").innerHTML = "The transit schedule may be different in the Metro Line Map website."
+    }
+
+    function Info2(){
+      //alert("Try")
+
+      document.getElementById("Display2").innerHTML = "We might have miscalulated prices when the original price might be changed."
+    }
+  </script>
+</body>
+</html>
