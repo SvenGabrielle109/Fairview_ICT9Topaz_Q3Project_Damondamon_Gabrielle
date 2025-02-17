@@ -49,6 +49,7 @@
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
       margin-bottom: 10px;
     }
+    
     .location{
       background: #f9f9f9;
       border-radius: 10px;
@@ -88,12 +89,18 @@
       background: #5e4c5a;
     }
 
+    main {
+      flex: 1;
+    }
+
     footer {
       background: #5e4c5a;
       color: #fff;
       text-align: center;
       padding: 15px;
-      margin-top: 20px;
+      width: 100%;
+      position: relative;
+      bottom: 0;
     }
 
     footer p {
@@ -402,13 +409,23 @@
         </center>
       </div>
 
+      <div class="container main">
+        <section class="footer">
+          <center>
+            <footer>
+              <p>&copy Damondamon & Manese</p>
+              <p>2025</p>
+            </footer>
+          </center>
+        </section>        
+      </div>
 
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
   <script>
-    // Holds station names and their base fare price
+    // Station names and their base fare price
     var locations = {
       "RSVLT": 14, "BLNTWK": 15, "MNMNT": 16, "5TH_AV": 17, "R._PP": 18, 
       "BD_SNTS": 19, "TYMN": 20, "BMBNG": 21, "DRT_JS": 22, "CRRD": 23, 
@@ -420,7 +437,7 @@
       "BND": 49, "YL": 50, "MGLLNS": 51, "TFT_VN": 52
     };
     /*
-    This function calculates the total fare based on the selected destinations.
+    Calculates the total fare based on the selected destinations.
     It checks for valid location selections and shows the price based on distance.
     Also calculates the discounted amounts.
     */
