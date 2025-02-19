@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>M&D Project</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Kosugi&display=swap');
+    body {
+      font-family: Kosugi, serif;
+      background: linear-gradient(#e1f0c4, #6bab90);
+      color: #333;
+      overflow-x: hidden;
+    }
+
+    header {
+      background: #5e4c5a;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 28px;
+      margin: 0;
+    }
+
+    .nav-item {
+      font-weight: bold;
+    }
+
+    .nav-item:hover {
+      text-decoration: underline;
+    }
+
+    .search-bar {
+      margin: auto;
+      width: 300px;
+    }
+
+    .main {
+      padding: 60px;
+    }
+
+    .map, .tickets, .contact {
+      background: #f9f9f9;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      margin-bottom: 10px;
+    }
+
+    .map, .tickets, .location, .schedule {
+      max-width: 800px;
+    }
+    
+    .location{
+      background: #f9f9f9;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      margin-bottom: 10px;
+      margin-top: -30px;
+    }
+
+    .map img, .tickets img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    .form-group select, .form-group textarea {
+      width: 100%;
+      padding: 8px;
+      border-radius: 5px;
+      border: 1px solid #ddd;
+    }
+
+    .form-group label {
+      font-weight: bold;
+    }
+
+    button {
+      padding: 10px 20px;
+      background: #5e4c5a;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #5e4c5a;
+    }
+
+    main {
+      flex: 1;
+      padding: 60px;
+      text-align: center;
+    }
+
+    .warning {
+      color: red;
+      font-weight: bold;
+    }
+
+    .dropdown-menu {
+      min-width: 350px;
+      max-width: 350px;
+      white-space: normal;
+      left: auto !important;
+      right: 0 !important;
+    }
+    
+    form label {
+      font-weight: normal;
+    }
+    .schedule {
+      background: #f9f9f9;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      margin-bottom: 10px;
+      max-width: 800px;
+      justify-content: center;
+      overflow-x: auto;
+    }
+
+    .schedule table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .schedule th, .schedule td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: center;
+      width: auto;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .schedule th {
+      background-color: #5e4c5a;
+      color: white;
+    }
+
+    .container-main{
+      float: left;
+      display: inline;
+      width: 400%;
+      margin-left: 18px;
+    }
+
+    .footer{
+      background: #5e4c5a;
+      text-align: center;
+    }
+
+    .footer p{
+      margin: 0;
+      color: #ffffff;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>ᝰ Eggplant Express .ᐟ</h1>
+  </header>
+
+  <nav class="navbar navbar-expand-lg navbar-dark" style="background: #55917f;">
+    <input class="form-control search-bar" type="search" placeholder="Search...">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item active"><a class="nav-link" href="#">Home</a></li>
+        <li class="nav-item active"><a class="nav-link" href="comment.html">Feedback</a></li>
+        <li class="nav-item active"><a class="nav-link" href="history.html">History</a></li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="contactDropdown" role="button" data-toggle="dropdown">Contact Us</a>
+          <div class="dropdown-menu">
+            <p class="dropdown-item">Email: eggplantexpress@gmail.com</p>
+            <p class="dropdown-item">Phone: +63 123 456 7890</p>
+          </div>
+        </li>
+        
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="referencesDropdown" role="button" data-toggle="dropdown">References</a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="https://www.metrolinemap.com/metro/manila/" target="_blank">Metro Manila Metro Map</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container main">
+    <div class="row">
+      <div class="col-md-6">
+        <center>
+          <section class="map">
+            <h2>Metro Rail Transit Map</h2>
+            <img src="METRO.png" alt="transitMAP">
+          </section>
+        </center>
+      </div>
+      <div class="col-md-6">
+        <section class="tickets">
+          <center>
+            <h2>Types of Tickets</h2>
+          </center>
+          <img src="https://i2-prod.mirror.co.uk/incoming/article12374399.ece/ALTERNATES/n615/Businessman-getting-his-boarding-pass-at-check-in-counter.jpg" alt="ticketsIMG">
+      <br><br>
+          <h3>Regular Ticket</h3>
+          <p>Php 13 - Php 30+</p>
+          <h3>Discounted Ticket</h3>
+          <p>30% off for seniors, 25% for PWD, & 20% for students!</p>
+        </section>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6">
+        <section class="location">
+          <center>
+            <h2>Location</h2>
+          </center>
+
+          <div class="form-group">
+            <label for="Destination1">Destination 1</label>
+            <select class="form-control" id="Destination1">
+              <option value="Location">Choose Location from</option>
+              <option value="RSVLT">Roosevelt</option>
+              <option value="BLNTWK">Balintawak</option>
+              <option value="MNMNT">Monumento</option>
+              <option value="5TH_AV">5th Avenue</option>
+              <option value="R._PP">R. Papa</option>
+              <option value="BD_SNTS">Abad Santos</option>
+              <option value="TYMN">Tayuman</option>
+              <option value="BMBNG">Bambang</option>
+              <option value="DRT_JS">Doroteo Jose</option>
+              <option value="CRRD">Carriedo</option>
+              <option value="CNTRL_TRMNL">Central Terminal</option>
+              <option value="NTD_NTNS">United Nations</option>
+              <option value="PDR_GL">Pedro Gil</option>
+              <option value="QRN">Quirino</option>
+              <option value="LBRTD">Libertad</option>
+              <option value="DS">EDSA</option>
+              <option value="BCLRN">Baclaran</option>
+              <option value="SNTLN">Santolan</option>
+              <option value="KTPNN">Katipunan</option>
+              <option value="NNS">Anonas</option>
+              <option value="RNT_CNT-CB">Araneta Center-Cubao</option>
+              <option value="GLMR">Gilmore</option>
+              <option value="J._RZ">J. Ruiz</option>
+              <option value="V._MP">V. Mapa</option>
+              <option value="PRZ">Pureza</option>
+              <option value="LGRD">Legarda</option>
+              <option value="RCT">Recto</option>
+              <option value="NRTH_VN">North Avenue</option>
+              <option value="QZN_VN">Quezon Avenue</option>
+              <option value="KMNNG">Kamuning</option>
+              <option value="SNTLN-NNPLS">Santolan-Annapolis</option>
+              <option value="RTGS">Ortigas</option>
+              <option value="SHW_BLVRD">Shaw Boulevard</option>
+              <option value="BN">Boni</option>
+              <option value="GDLP">Guadalupe</option>
+              <option value="BND">Buendia</option>
+              <option value="YL">Ayala</option>
+              <option value="MGLLNS">Magallanes</option>
+              <option value="TFT_VN">Taft Avenue</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="Destination2">Destination 2</label>
+            <select class="form-control" id="Destination2">
+              <option value="Location">Choose Location from</option>
+              <option value="RSVLT">Roosevelt</option>
+              <option value="BLNTWK">Balintawak</option>
+              <option value="MNMNT">Monumento</option>
+              <option value="5TH_AV">5th Avenue</option>
+              <option value="R._PP">R. Papa</option>
+              <option value="BD_SNTS">Abad Santos</option>
+              <option value="TYMN">Tayuman</option>
+              <option value="BMBNG">Bambang</option>
+              <option value="DRT_JS">Doroteo Jose</option>
+              <option value="CRRD">Carriedo</option>
+              <option value="CNTRL_TRMNL">Central Terminal</option>
+              <option value="NTD_NTNS">United Nations</option>
+              <option value="PDR_GL">Pedro Gil</option>
+              <option value="QRN">Quirino</option>
+              <option value="LBRTD">Libertad</option>
+              <option value="DS">EDSA</option>
+              <option value="BCLRN">Baclaran</option>
+              <option value="SNTLN">Santolan</option>
+              <option value="KTPNN">Katipunan</option>
+              <option value="NNS">Anonas</option>
+              <option value="RNT_CNT-CB">Araneta Center-Cubao</option>
+              <option value="GLMR">Gilmore</option>
+              <option value="J._RZ">J. Ruiz</option>
+              <option value="V._MP">V. Mapa</option>
+              <option value="PRZ">Pureza</option>
+              <option value="LGRD">Legarda</option>
+              <option value="RCT">Recto</option>
+              <option value="NRTH_VN">North Avenue</option>
+              <option value="QZN_VN">Quezon Avenue</option>
+              <option value="KMNNG">Kamuning</option>
+              <option value="SNTLN-NNPLS">Santolan-Annapolis</option>
+              <option value="RTGS">Ortigas</option>
+              <option value="SHW_BLVRD">Shaw Boulevard</option>
+              <option value="BN">Boni</option>
+              <option value="GDLP">Guadalupe</option>
+              <option value="BND">Buendia</option>
+              <option value="YL">Ayala</option>
+              <option value="MGLLNS">Magallanes</option>
+              <option value="TFT_VN">Taft Avenue</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="Price">Ticket Price</label>
+            <p id="display1">(Select destinations to calculate fare)</p>
+          </div>
+
+          <div class="form-group">
+            <label for="Discounted">Discount</label>
+            <form>
+                <label for="PWD">PWD 25%</label>
+                <input type="checkbox" id="PWD" name="PWD">
+              <label for="Students">Students 20%</label>
+                <input type="checkbox" id="Students" name="Students">
+              <label for="Seniors">Seniors 30%</label>
+                <input type="checkbox" id="Seniors" name="Seniors">
+            </form>
+
+            <p id="display2"> </p>
+          </div>
+        </section>
+      </div>
+
+       <center>
+       <div class="container-main">
+         <div class="row">
+           <div class="col-md-4">
+            <section class="schedule">
+              <center>
+                <h2>Transit Schedule</h2>
+              </center>
+              <div class="table-responsive">
+                <table class="table table-bordered table-striped">
+                  <thead class="thead-dark">
+                
+                    <tr>
+                      <th>Day</th>
+                      <th>Morning</th>
+                      <th>Afternoon</th>
+                      <th>Evening</th>
+                    </tr>
+                  
+                    <tr>
+                      <td>Monday</td>
+                      <td>6:30 AM</td>
+                      <td>12:45 PM</td>
+                      <td>7:15 PM</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>Tuesday</td>
+                      <td>6:45 AM</td>
+                      <td>1:00 PM</td>
+                      <td>7:30 PM</td>
+                    </tr>
+                
+                    <tr>
+                      <td>Wednesday</td>
+                      <td>7:00 AM</td>
+                      <td>1:15 PM</td>
+                      <td>7:45 PM</td>
+                    </tr>
+                
+                    <tr>
+                     <td>Thursday</td>
+                     <td>6:15 AM</td>
+                     <td>12:30 PM</td>
+                     <td>7:00 PM</td>
+                    </tr>
+                  
+  
+                    <tr>
+                     <td>Friday</td>
+                     <td>6:00 AM</td>
+                     <td>12:15 PM</td>
+                     <td>6:45 PM</td>
+                   </tr>
+                 
+                   <tr>
+                     <td>Saturday</td>
+                     <td>7:15 AM</td>
+                     <td>1:30 PM</td>
+                     <td>8:00 PM</td>
+                   </tr>
+                
+                    <tr>
+                     <td>Sunday</td>
+                     <td>8:00 AM</td>
+                     <td>2:00 PM</td>
+                     <td>8:30 PM</td>
+                    </tr>
+                  </thead>
+                </table>
+              </section>
+            </div>
+          </div>
+        </center>
+      </div>
+
+      <br>
+
+      <div>
+        <section class="footer">
+          <footer>
+            <p>@ Damondamon & Manese</p>
+            <p>2025</p>
+          </footer>
+        </section>
+      </div>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <script>
+    // Station names and their base fare price
+    var locations = {
+      "RSVLT": 14, "BLNTWK": 15, "MNMNT": 16, "5TH_AV": 17, "R._PP": 18, 
+      "BD_SNTS": 19, "TYMN": 20, "BMBNG": 21, "DRT_JS": 22, "CRRD": 23, 
+      "CNTRL_TRMNL": 24, "NTD_NTNS": 25, "PDR_GL": 26, "QRN": 27, "LBRTD": 28, 
+      "DS": 29, "BCLRN": 30, "SNTLN": 31, "KTPNN": 32, "NNS": 33, 
+      "RNT_CNT-CB": 34, "GLMR": 35, "J._RZ": 36, "V._MP": 37, "PRZ": 38, 
+      "LGRD": 39, "RCT": 40, "NRTH_VN": 41, "QZN_VN": 42, "KMNNG": 43, 
+      "SNTLN-NNPLS": 44, "RTGS": 45, "SHW_BLVRD": 46, "BN": 47, "GDLP": 48, 
+      "BND": 49, "YL": 50, "MGLLNS": 51, "TFT_VN": 52
+    };
+    /*
+    Calculates the total fare based on the selected destinations.
+    It checks for valid location selections and shows the price based on distance.
+    Also calculates the discounted amounts.
+    */
+    function calculateFare() {
+      // Gets the selected destinations and discount checkboxes
+      var destination1 = document.getElementById('Destination1').value;
+      var destination2 = document.getElementById('Destination2').value;
+      var pwdBox = document.getElementById('PWD');
+      var studentBox = document.getElementById('Students');
+      var seniorBox = document.getElementById('Seniors');
+
+      if (destination1 === destination2 || destination1 === "Location" || destination2 === "Location") {
+        document.getElementById('display1').innerHTML = "<span class='warning'>Please select different valid destinations!</span>";
+        return;
+      }
+
+      var fare = Math.abs(locations[destination1] - locations[destination2]) + 10;
+      
+      // Applies selected discounts
+      var discount = 0;
+      if (pwdBox.checked) discount = 0.25;
+      if (studentBox.checked && discount < 0.20) discount = 0.20;
+      if (seniorBox.checked && discount < 0.30) discount = 0.30;
+
+      fare = fare * (1 - discount);
+
+      document.getElementById('display1').innerText = "Fare: Php " + fare.toFixed(2);
+    }
+
+    document.getElementById('Destination1').onchange = calculateFare;
+    document.getElementById('Destination2').onchange = calculateFare;
+    document.getElementById('PWD').onchange = calculateFare;
+    document.getElementById('Students').onchange = calculateFare;
+    document.getElementById('Seniors').onchange = calculateFare;
+</script>
+</body>
+</html>
