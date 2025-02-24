@@ -416,7 +416,7 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
   <script>
-    // Station names and their base fare price
+    // Stations and their prices
     var locations = {
       "RSVLT": 14, "BLNTWK": 15, "MNMNT": 16, "5TH_AV": 17, "R._PP": 18, 
       "BD_SNTS": 19, "TYMN": 20, "BMBNG": 21, "DRT_JS": 22, "CRRD": 23, 
@@ -444,8 +444,6 @@
         document.getElementById('display1').innerHTML = "<span class='warning'>Please select different valid destinations!</span>";
         return;
       }
-
-      var fare = Math.abs(locations[destination1] - locations[destination2]) + 10;
       
       // Applies selected discounts
       var discount = 0;
