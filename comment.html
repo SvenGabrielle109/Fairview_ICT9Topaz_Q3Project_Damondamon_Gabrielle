@@ -224,6 +224,7 @@
         <li class="nav-item active"><a class="nav-link" href="index.html">Home</a></li>
         <li class="nav-item active"><a class="nav-link" href="comment.html">Feedback</a></li>
         <li class="nav-item active"><a class="nav-link" href="history.html">History</a></li>
+        <li class="nav-item active"><a class="nav-link" href="reminders.html">Reminders/Tips</li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="contactDropdown" role="button" data-toggle="dropdown">Contact Us</a>
           <div class="dropdown-menu">
@@ -240,7 +241,7 @@
         </li>
       </ul>
     </div>
-  </nav> 
+  </nav>
  
   <br>
 
@@ -314,7 +315,7 @@
                 <br>
 
                 <center>
-                  <input type="submit" value="Submit Your Information" onclick="Message3()">
+                  <input type="submit" value="Submit Your Feedback" onclick="Message3()">
                 </center>
               </form>
             </div>
@@ -407,36 +408,6 @@
                 </form>
               </center>
             </div>
-
-            <section class="errors">
-              <form>
-                <center>
-                  <details ontoggle="OPTIONAL()">
-                    <summary><em>Were there any errors that occur</em></summary>
-                      <i id="SHOW"> </i>
-                  </details>
-                </center>
-
-
-                <br> 
-
-                <center>
-                  <input type="radio" name="Yes">
-                    <label for="Yes">Yes</label>
-                  
-                  <br>
-
-                  <input type="radio" name="No" value="No">
-                    <label for="No">No</label>
-                </center>
-
-                <br> 
-
-                <center>
-                  <input type="submit" value="Submit Your Evaluation" onclick="Message()">
-                </center>
-              </form>
-            </section>
           </section>
         </section>
              
@@ -473,7 +444,7 @@
       </div>
     </div>
   </div>
-  
+
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
@@ -534,13 +505,7 @@
 
       document.getElementById("Display6").innerHTML = "The Philippines Code Number:" + Code + "<br>" + "<strong>USE THE PHILIPPINES CODE NUMBER, BEFORE YOU ADD THE DIAL NUMBER!!";
     }
-
-    function OPTIONAL(){
-     //alert("Try")
-
-      document.getElementById("SHOW").innerHTML = "You can add those concerns in the feedback";
-    }
-
+    
     function Info7(){
       //alert("Try")
 
