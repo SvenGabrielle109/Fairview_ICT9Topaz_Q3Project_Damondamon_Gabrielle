@@ -30,6 +30,12 @@
       font-weight: bold;
     }
 
+    .navbar-nav .dropdown-menu {
+      position: absolute;
+      top: 100%;
+      margin-right: 15px;
+    }
+
     .nav-item:hover {
       text-decoration: underline;
     }
@@ -150,14 +156,12 @@
     .container-main{
       float: left;
       display: inline;
-      width: 400%;
+      width: 379%;
       margin-left: 18px;
     }
-
   </style>
 </head>
 <body>
-
   <header>
     <h1>ᝰ Eggplant Express .ᐟ</h1>
   </header>
@@ -168,10 +172,11 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item active"><a class="nav-link" href="#">Home</a></li>
+      <ul class="navbar-nav ml-auto d-flex justify-content-between">
+        <li class="nav-item active"><a class="nav-link" href="index.html">Home</a></li>
         <li class="nav-item active"><a class="nav-link" href="comment.html">Feedback</a></li>
         <li class="nav-item active"><a class="nav-link" href="history.html">History</a></li>
+        <li class="nav-item active"><a class="nav-link" href="reminders.html">Reminders/Tips</a></li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="contactDropdown" role="button" data-toggle="dropdown">Contact Us</a>
           <div class="dropdown-menu">
@@ -208,9 +213,9 @@
           <img src="https://i2-prod.mirror.co.uk/incoming/article12374399.ece/ALTERNATES/n615/Businessman-getting-his-boarding-pass-at-check-in-counter.jpg" alt="ticketsIMG">
       <br><br>
           <h3>Regular Ticket</h3>
-          <p>Php 13 - Php 50+</p>
+          <p>Php 13 - Php 30+</p>
           <h3>Discounted Ticket</h3>
-          <p>30% off for seniors, 25% for PWD, & 20% for students!</p>
+          <p>25% off for seniors PWD, & students!</p>
         </section>
       </div>
     </div>
@@ -225,92 +230,62 @@
           <div class="form-group">
             <label for="Destination1">Destination 1</label>
             <select class="form-control" id="Destination1">
-              <option value="Location">Choose Location from</option>
-              <option value="RSVLT">Roosevelt</option>
-              <option value="BLNTWK">Balintawak</option>
-              <option value="MNMNT">Monumento</option>
-              <option value="5TH_AV">5th Avenue</option>
-              <option value="R._PP">R. Papa</option>
-              <option value="BD_SNTS">Abad Santos</option>
-              <option value="TYMN">Tayuman</option>
-              <option value="BMBNG">Bambang</option>
-              <option value="DRT_JS">Doroteo Jose</option>
-              <option value="CRRD">Carriedo</option>
-              <option value="CNTRL_TRMNL">Central Terminal</option>
-              <option value="NTD_NTNS">United Nations</option>
-              <option value="PDR_GL">Pedro Gil</option>
-              <option value="QRN">Quirino</option>
-              <option value="LBRTD">Libertad</option>
-              <option value="DS">EDSA</option>
-              <option value="BCLRN">Baclaran</option>
-              <option value="SNTLN">Santolan</option>
-              <option value="KTPNN">Katipunan</option>
-              <option value="NNS">Anonas</option>
-              <option value="RNT_CNT-CB">Araneta Center-Cubao</option>
-              <option value="GLMR">Gilmore</option>
-              <option value="J._RZ">J. Ruiz</option>
-              <option value="V._MP">V. Mapa</option>
-              <option value="PRZ">Pureza</option>
-              <option value="LGRD">Legarda</option>
-              <option value="RCT">Recto</option>
-              <option value="NRTH_VN">North Avenue</option>
-              <option value="QZN_VN">Quezon Avenue</option>
-              <option value="KMNNG">Kamuning</option>
-              <option value="SNTLN-NNPLS">Santolan-Annapolis</option>
-              <option value="RTGS">Ortigas</option>
-              <option value="SHW_BLVRD">Shaw Boulevard</option>
-              <option value="BN">Boni</option>
-              <option value="GDLP">Guadalupe</option>
-              <option value="BND">Buendia</option>
-              <option value="YL">Ayala</option>
-              <option value="MGLLNS">Magallanes</option>
-              <option value="TFT_VN">Taft Avenue</option>
+              <option value="0">Choose Location</option>
+              <option value="1">Dr. Santos</option>
+              <option value="2">Ninoy Aquino Ave.</option>
+              <option value="3">MIA Road</option>
+              <option value="4">Redemptorist-Ave.</option>
+              <option value="5">Baclaran</option>
+              <option value="6">EDSA</option>
+              <option value="7">Libertad</option>
+              <option value="8">Gil Puyat</option>
+              <option value="9">Vito Cruz</option>
+              <option value="10">Quirino</option>
+              <option value="11">Pedro Gil</option>
+              <option value="12">United Nations</option>
+              <option value="13">Central Terminal</option>
+              <option value="14">Carriedo</option>
+              <option value="15">Doroteo Jose</option>
+              <option value="16">Bambang</option>
+              <option value="17">Tayuman</option>
+              <option value="18">Bluementritt</option>
+              <option value="19">Jose Abad Santos</option>
+              <option value="20">R.Rapa</option>
+              <option value="21">5th Ave.</option>
+              <option value="22">Yamaha Monumento</option>
+              <option value="23">Balintawak</option>
+              <option value="24">Fernando Poe Jr.</option>
             </select>
           </div>
 
           <div class="form-group">
             <label for="Destination2">Destination 2</label>
             <select class="form-control" id="Destination2">
-              <option value="Location">Choose Location from</option>
-              <option value="RSVLT">Roosevelt</option>
-              <option value="BLNTWK">Balintawak</option>
-              <option value="MNMNT">Monumento</option>
-              <option value="5TH_AV">5th Avenue</option>
-              <option value="R._PP">R. Papa</option>
-              <option value="BD_SNTS">Abad Santos</option>
-              <option value="TYMN">Tayuman</option>
-              <option value="BMBNG">Bambang</option>
-              <option value="DRT_JS">Doroteo Jose</option>
-              <option value="CRRD">Carriedo</option>
-              <option value="CNTRL_TRMNL">Central Terminal</option>
-              <option value="NTD_NTNS">United Nations</option>
-              <option value="PDR_GL">Pedro Gil</option>
-              <option value="QRN">Quirino</option>
-              <option value="LBRTD">Libertad</option>
-              <option value="DS">EDSA</option>
-              <option value="BCLRN">Baclaran</option>
-              <option value="SNTLN">Santolan</option>
-              <option value="KTPNN">Katipunan</option>
-              <option value="NNS">Anonas</option>
-              <option value="RNT_CNT-CB">Araneta Center-Cubao</option>
-              <option value="GLMR">Gilmore</option>
-              <option value="J._RZ">J. Ruiz</option>
-              <option value="V._MP">V. Mapa</option>
-              <option value="PRZ">Pureza</option>
-              <option value="LGRD">Legarda</option>
-              <option value="RCT">Recto</option>
-              <option value="NRTH_VN">North Avenue</option>
-              <option value="QZN_VN">Quezon Avenue</option>
-              <option value="KMNNG">Kamuning</option>
-              <option value="SNTLN-NNPLS">Santolan-Annapolis</option>
-              <option value="RTGS">Ortigas</option>
-              <option value="SHW_BLVRD">Shaw Boulevard</option>
-              <option value="BN">Boni</option>
-              <option value="GDLP">Guadalupe</option>
-              <option value="BND">Buendia</option>
-              <option value="YL">Ayala</option>
-              <option value="MGLLNS">Magallanes</option>
-              <option value="TFT_VN">Taft Avenue</option>
+              <option value="0">Choose Location</option>
+              <option value="1">Dr. Santos</option>
+              <option value="2">Ninoy Aquino Ave.</option>
+              <option value="3">MIA Road</option>
+              <option value="4">Redemptorist-Ave.</option>
+              <option value="5">Baclaran</option>
+              <option value="6">EDSA</option>
+              <option value="7">Libertad</option>
+              <option value="8">Gil Puyat</option>
+              <option value="9">Vito Cruz</option>
+              <option value="10">Quirino</option>
+              <option value="11">Pedro Gil</option>
+              <option value="12">United Nations</option>
+              <option value="13">Central Terminal</option>
+              <option value="14">Carriedo</option>
+              <option value="15">Doroteo Jose</option>
+              <option value="16">Bambang</option>
+              <option value="17">Tayuman</option>
+              <option value="18">Bluementritt</option>
+              <option value="19">Jose Abad Santos</option>
+              <option value="20">R.Rapa</option>
+              <option value="21">5th Ave.</option>
+              <option value="22">Yamaha Monumento</option>
+              <option value="23">Balintawak</option>
+              <option value="24">Fernando Poe Jr.</option>
             </select>
           </div>
 
@@ -322,12 +297,8 @@
           <div class="form-group">
             <label for="Discounted">Discount</label>
             <form>
-                <label for="PWD">PWD 25%</label>
+                <label for="PWD">PWD, Students, Seniors: 20%</label>
                 <input type="checkbox" id="PWD" name="PWD">
-              <label for="Students">Students 20%</label>
-                <input type="checkbox" id="Students" name="Students">
-              <label for="Seniors">Seniors 30%</label>
-                <input type="checkbox" id="Seniors" name="Seniors">
             </form>
 
             <p id="display2"> </p>
@@ -335,7 +306,9 @@
         </section>
       </div>
 
-       <center>
+      <br>
+
+      <center>
        <div class="container-main">
          <div class="row">
            <div class="col-md-4">
@@ -410,57 +383,32 @@
           </div>
         </center>
       </div>
-
+    </div>
+  </div>
+  
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
   <script>
-    // Stations and their prices
-    var locations = {
-      "RSVLT": 14, "BLNTWK": 15, "MNMNT": 16, "5TH_AV": 17, "R._PP": 18, 
-      "BD_SNTS": 19, "TYMN": 20, "BMBNG": 21, "DRT_JS": 22, "CRRD": 23, 
-      "CNTRL_TRMNL": 24, "NTD_NTNS": 25, "PDR_GL": 26, "QRN": 27, "LBRTD": 28, 
-      "DS": 29, "BCLRN": 30, "SNTLN": 31, "KTPNN": 32, "NNS": 33, 
-      "RNT_CNT-CB": 34, "GLMR": 35, "J._RZ": 36, "V._MP": 37, "PRZ": 38, 
-      "LGRD": 39, "RCT": 40, "NRTH_VN": 41, "QZN_VN": 42, "KMNNG": 43, 
-      "SNTLN-NNPLS": 44, "RTGS": 45, "SHW_BLVRD": 46, "BN": 47, "GDLP": 48, 
-      "BND": 49, "YL": 50, "MGLLNS": 51, "TFT_VN": 52
-    };
-    /*
-    Calculates the total fare based on the selected destinations.
-    It checks for valid location selections and shows the price based on distance.
-    Also calculates the discounted amounts.
-    */
     function calculateFare() {
-      // Gets the selected destinations and discount checkboxes
-      var destination1 = document.getElementById('Destination1').value;
-      var destination2 = document.getElementById('Destination2').value;
-      var pwdBox = document.getElementById('PWD');
-      var studentBox = document.getElementById('Students');
-      var seniorBox = document.getElementById('Seniors');
-
-      if (destination1 === destination2 || destination1 === "Location" || destination2 === "Location") {
-        document.getElementById('display1').innerHTML = "<span class='warning'>Please select different valid destinations!</span>";
-        return;
-      }
-      
-      // Applies selected discounts
-      var discount = 0;
-      if (pwdBox.checked) discount = 0.25;
-      if (studentBox.checked && discount < 0.20) discount = 0.20;
-      if (seniorBox.checked && discount < 0.30) discount = 0.30;
-
+      var destination1 = parseInt(document.getElementById('Destination1').value);
+      var destination2 = parseInt(document.getElementById('Destination2').value);
+      var pwdBox = document.getElementById('PWD').checked;
+  
+      var baseFare = 15;
+      var fare = baseFare + (destination2 - destination1) * 2;
+      fare = (fare < baseFare) * (baseFare - fare) + (fare >= baseFare) * fare; // Ensure positive fare
+  
+      var discount = pwdBox * 0.20; // 20% discount if checked
       fare = fare * (1 - discount);
-
+  
       document.getElementById('display1').innerText = "Fare: Php " + fare.toFixed(2);
     }
-
+  
     document.getElementById('Destination1').onchange = calculateFare;
     document.getElementById('Destination2').onchange = calculateFare;
     document.getElementById('PWD').onchange = calculateFare;
-    document.getElementById('Students').onchange = calculateFare;
-    document.getElementById('Seniors').onchange = calculateFare;
-</script>
+  </script>
 </body>
 </html>
